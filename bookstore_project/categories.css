@@ -1,0 +1,344 @@
+/* 
+font-family: 'Charmonman', cursive;
+font-family: 'Cousine', monospace;
+font-family: 'Happy Monkey', cursive;
+font-family: 'Leckerli One', cursive;
+ */
+
+ *{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background-color: var(--body-bgcolor);
+}
+:root{
+    --NavFoot-color:#e9eef4;
+    --NavFoot-hover: #136af5;
+    --NavFoot-bgColor:#211f20;
+    --body-bgcolor:#d0deef;
+    --body-tcolor:white;
+    --body-tcolor2:black;
+    --text-color2:rgb(239, 28, 63);
+}
+.up{
+    position: fixed;
+    bottom: 40px;
+    right: -70px;
+    color: var(--NavFoot-bgColor);
+    background: linear-gradient(120deg,#2980b9, #0c751c);
+    font-size: 70px;
+    cursor: pointer;
+    border-radius: 20px;
+    z-index: 1000;
+    transition: 0.2s;
+}
+.up.show{
+    right: 30px;
+}
+header{
+    font-family: 'Charmonman', cursive;
+    width: 100%;
+    top: 0%;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    padding: 40px 14% 10px;
+    background-color: var(--NavFoot-bgColor);
+    font-size: 30px;
+}
+header img{
+    width: 50px;
+    height: 50px;
+}
+.navbar{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+
+}
+.navbar a{
+    color: var(--NavFoot-color);
+    font-weight: 500;
+    margin: 10px 22px;
+    position: relative;
+    transition: all 0.5s ease;
+}
+/* .navbar .signIn{
+    background-color: var(--NavFoot-hover);
+    border: 2px var(--NavFoot-hover) solid;
+    border-radius: 50px;
+    color: var(--NavFoot-color) !important;
+}
+.navbar .signIn a:hover{
+    color: var(--NavFoot-color);
+} */
+header .h-icons{
+    display: flex;
+    align-items: center;
+    margin: -2px;
+
+}
+header .h-icons i{
+    color: var(--NavFoot-color);
+    font-size: 40px;
+    margin: 1px 20px;
+    transition: all 0.5s ease;
+    font-weight: 500px;
+}
+header .h-icons i:hover{
+    transform: translateY(-7px);
+    color: var(--NavFoot-hover);
+}
+.navbar a::before{
+    content: '';
+    position: absolute;
+    width: 0%;
+    left: 0%;
+    height: 3px;
+    background-color: var(--NavFoot-hover);
+    bottom: -7px;
+    transition: all 0.5s ease;
+}
+.navbar a:hover{
+    color: var(--NavFoot-hover);
+}
+
+.navbar a:hover::before{
+    width: 100%;
+}
+
+
+/* Slideshow container */
+.slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    position: relative;
+}
+.slideshow-container {
+    max-width: 2000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+.mySlides img{
+    width: 2000px;
+    height: 1000px;
+}
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 25px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: 1px;
+    font-family: 'Happy Monkey', cursive;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 25px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+.dot-footer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 10%;
+}
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+/* product List section */
+
+.products{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-rows: repeat(4,auto);
+    gap: 200px;
+}
+.products .book-header{
+    display: flex;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.238);
+    text-align: center;
+    margin: 40px 0px;
+    font-size: 40px;
+}
+.book-header i{
+    top:20px;
+    margin-right:20px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+.book-header i:hover{
+    color: var(--NavFoot-hover);
+}
+.product-container{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    justify-content: center;
+    gap: 60px;
+    align-items: center;
+    text-align: center;
+}
+.card{
+    cursor: pointer;
+    border-radius: 20px;
+}
+.card img{
+    width: 474px;
+    height: 642px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 20px var(--NavFoot-bgColor);
+    transition: all 0.5s ease;
+}
+.card img:hover{
+    transform: scale(1.1);
+}
+.card h4{
+    font-size: 25px;
+    font-family: 'Happy Monkey', cursive;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.card h4:hover{
+    font-size: 30px;
+    color: var(--NavFoot-hover);
+}
+.card p{
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: 400;
+    color: var(--text-color2);
+
+}
+/* footer section */
+.contact{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+	gap: 2rem;
+	background: #272829;
+    font-family: 'Leckerli One', cursive;
+    padding: 50px;
+}
+.contact-box h4{
+	margin-bottom: 1.5rem;
+	font-size: 35px;
+	color: var(--NavFoot-hover);
+}
+.contact-box li{
+	margin-bottom: 18px;
+}
+.contact-box li a{
+	display: block;
+	color: var(--body-bgcolor);
+	font-size: 25px;
+	font-weight: 500;
+	transition: all .50s ease;
+}
+.contact-box li a:hover{
+	transform: translateX(-7px);
+	color: var(--NavFoot-hover);
+}
+.contact-box h5{
+	font-size: 30px;
+	font-weight: 600;
+	color: var(--body-bgcolor);
+}
+.social{
+	display: flex;
+	margin-top: 1.8rem;
+}
+.social i{
+	height: 37px;
+	width: 37px;
+	background: transparent;
+	border: 2px solid var(--NavFoot-bgColor);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	font-size: 50px;
+	margin-right: 1.1rem;
+	color: var(--body-bgcolor);
+	transition: all .50s ease;
+}
+.social i:hover{
+	background: var(--main-color);
+	color: var(--NavFoot-hover);
+	transform: scale(1.1);
+}

@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charmonman&family=Cousine&family=Happy+Monkey&family=Leckerli+One&display=swap');
+/* 
+font-family: 'Charmonman', cursive;
+font-family: 'Cousine', monospace;
+font-family: 'Happy Monkey', cursive;
+font-family: 'Leckerli One', cursive;
+ */
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background-color: var(--body-bgcolor);
+}
+:root{
+    --NavFoot-color:#e9eef4;
+    --NavFoot-hover: #136af5;
+    --NavFoot-bgColor:#211f20;
+    --body-bgcolor:#d0deef;
+    --body-tcolor:white;
+    --body-tcolor2:black;
+    --text-color2:rgb(239, 28, 63);
+}
+.up{
+    position: fixed;
+    bottom: 40px;
+    right: -70px;
+    color: var(--NavFoot-bgColor);
+    background: linear-gradient(120deg,#2980b9, #0c751c);
+    font-size: 70px;
+    cursor: pointer;
+    border-radius: 20px;
+    z-index: 1000;
+    transition: 0.2s;
+}
+.up.show{
+    right: 30px;
+}
+header{
+    font-family: 'Charmonman', cursive;
+    width: 100%;
+    top: 0%;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    padding: 40px 14% 10px;
+    background-color: var(--NavFoot-bgColor);
+    font-size: 30px;
+
+}
+header img{
+    width: 50px;
+    height: 50px;
+}
+header span{
+    color: #e9eef4;
+}
+.navbar{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+
+}
+.navbar a{
+    color: var(--NavFoot-color);
+    font-weight: 500;
+    margin: 10px 22px;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.active{
+    color: var(--NavFoot-hover);
+}
+.active::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    height: 3px;
+    background-color: var(--NavFoot-hover);
+    bottom: -7px;
+}
+
+header .h-icons{
+    display: flex;
+    align-items: center;
+    margin: -2px;
+
+}
+header .h-icons i{
+    color: var(--NavFoot-color);
+    font-size: 40px;
+    margin: 1px 20px;
+    transition: all 0.5s ease;
+    font-weight: 500px;
+}
+header .h-icons i:hover{
+    transform: translateY(-7px);
+    color: var(--NavFoot-hover);
+}
+.navbar a::before{
+    content: '';
+    position: absolute;
+    width: 0%;
+    left: 0%;
+    height: 3px;
+    background-color: var(--NavFoot-hover);
+    bottom: -7px;
+    transition: all 0.5s ease;
+}
+.navbar a:hover{
+    color: var(--NavFoot-hover);
+}
+
+.navbar a:hover::before{
+    width: 100%;
+}
+/*  End of Header */
+/* background section */
+section{
+    padding: 60px 14% 20px;
+}
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(photos/background/Open-Book-with-Light-Bulb-1030x687.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.home-text h1{
+    font-family: 'Leckerli One', cursive;
+    font-size: 100px;
+    color: var(--body-tcolor2);
+    line-height: 1.5vh;
+    margin-bottom: 40px;
+}
+.home-text p{
+    font-family: 'Leckerli One', cursive;
+    font-size: 50px;
+    color: var(--body-tcolor);
+}
+.home-text .ButtonNeon{
+    margin-top: 50px;
+}
+.home-text .neonBtn{
+    font-family: 'Charmonman', cursive;
+    font-size: 30px;
+    text-transform: uppercase;
+    background-color: var(--NavFoot-hover);
+    border-radius: 30px;
+    padding: 10px;
+    color: var(--body-bgcolor);
+}
+/* Delete style button and add neon style */
+/* News header */
+.news{
+    margin-top: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 45px;
+    background-color: rgb(66, 62, 62,0.3);
+    margin-bottom: 50px;
+    height: 70px;
+    font-family: 'Charmonman', cursive;
+}
+.banner{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    
+}
+.banner-image{
+    background-color: transparent;
+    width: 540px;
+    height: 500px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+}
+.banner-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.banner-image:hover .banner-inner{
+    transform: rotateY(180deg);
+}
+.image-forward, .image-backward{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+.image-forward{
+    border: 1px solid var(--NavFoot-bgColor);
+    border-radius: 10px;
+}
+.image-backward{
+    background-color: var(--NavFoot-bgColor);
+    color: var(--body-bgcolor);
+    transform: rotateY(180deg);
+    text-align: center;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+.banner .banner-image img{
+    width: 540px;
+    height: 500px;
+}
+/* New Arrival */
+.content-text{
+    text-align: center;
+    font-weight: 400;
+    font-size: 45px;
+    font-family: cursive;
+    color: var(--body-tcolor2);
+    background-color: rgb(64, 62, 63,0.3);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.new-content{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+    text-align: center;
+}
+.row{
+    position: relative;
+    cursor: pointer;
+}
+.row img{
+    width: 474px;
+    height: 642px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 20px var(--NavFoot-bgColor);
+    transition: all 0.5s ease;
+}
+.row img:hover{
+    transform: scale(1.1);
+}
+.row h4{
+    font-size: 25px;
+    font-family: 'Happy Monkey', cursive;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+}
+.row h4:hover{
+    font-size: 30px;
+    color: var(--NavFoot-hover);
+}
+.row h5{
+    font-size: 40px;
+    color: var(--text-color2);
+}
+.row .bbtn{
+    font-size: 40px;
+    padding: 10px;
+}
+.row .bbtn i{
+    color: var(--NavFoot-bgColor);
+    font-size: 40px;
+    margin: 1px 20px;
+    transition: all 0.5s ease;
+    font-weight: 500px;
+}
+.row .bbtn i:hover{
+    transform: translateY(-7px);
+    color: var(--NavFoot-hover);
+}
+.top{
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    font-size: 30px;
+    height: 40px;
+    width: 60px;
+    background-color: rgba(255, 0, 0, 0.345);
+    color: var(--NavFoot-bgColor);
+    font-family: 'Cousine', monospace;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+}
+.addtocart{
+    bottom: 0px;
+    right: 0%;
+    left: 0%;
+    background-color: rgba(11, 145, 255, 0.2);
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Cousine', monospace;
+    font-size: 30px;
+    color: var(--NavFoot-bgColor);
+}
+.AboutUs{
+    display: grid;
+    margin-top: 100px;
+    grid-template-rows: repeat(3,auto);
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 400px;
+    font-family: 'Leckerli One', cursive;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+.AboutUs .heading{
+    background-color: rgba(33, 31, 32, 0.306);
+    text-align: center;
+    font-family: 'Leckerli One', cursive;
+    font-size: 40px;
+    font-weight: 400;
+
+}
+.AboutUs .background img{
+    border-radius: 20px;
+    box-shadow: 10px 5px 20px var(--NavFoot-bgColor);
+}
+.AboutUs text{
+    line-height: 20px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+}
+/* Neon button */
+.contact{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+	gap: 2rem;
+	background: #272829;
+    font-family: 'Leckerli One', cursive;
+    padding: 40px;
+}
+.contact-box h4{
+	margin-bottom: 1.5rem;
+	font-size: 35px;
+	color: var(--NavFoot-hover);
+}
+.contact-box li{
+	margin-bottom: 18px;
+}
+.contact-box li a{
+	display: block;
+	color: var(--body-bgcolor);
+	font-size: 25px;
+	font-weight: 500;
+	transition: all .50s ease;
+}
+.contact-box li a:hover{
+	transform: translateX(-7px);
+	color: var(--NavFoot-hover);
+}
+.contact-box h5{
+	font-size: 30px;
+	font-weight: 600;
+	color: var(--body-bgcolor);
+}
+.social{
+	display: flex;
+	margin-top: 1.8rem;
+}
+.social i{
+	height: 37px;
+	width: 37px;
+	background: transparent;
+	border: 2px solid var(--NavFoot-bgColor);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	font-size: 50px;
+	margin-right: 1.1rem;
+	color: var(--body-bgcolor);
+	transition: all .50s ease;
+}
+.social i:hover{
+	background: var(--main-color);
+	color: var(--NavFoot-hover);
+	transform: scale(1.1);
+}
